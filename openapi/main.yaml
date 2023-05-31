@@ -1,0 +1,37 @@
+openapi: 3.1.0
+
+info:
+  title: sample
+  version: 1.0.0
+  description: Veleta で自動生成した API Server の Golang 版のサンプル
+  license:
+    name: Apache 2.0
+    identifier: Apache-2.0
+    url: https://www.apache.org/licenses/LICENSE-2.0
+
+servers:
+  - url: "http://localhost:3000"
+    description: 内部の API Server 本体
+
+paths:
+  /customers:
+    $ref: customers/collection.yaml
+  /customers/{customerId}:
+    $ref: customers/identified.yaml
+  /products:
+    $ref: products/collection.yaml
+  /products/{productId}:
+    $ref: products/identified.yaml
+  /orders:
+    $ref: orders/collection.yaml
+  /orders/{orderId}:
+    $ref: orders/identified.yaml      
+
+components:
+  securitySchemes:
+    basicAuth:
+      type: http
+      scheme: basic
+
+security:
+  - basicAuth: []

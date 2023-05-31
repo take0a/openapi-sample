@@ -1,0 +1,50 @@
+post:
+  operationId: postCustomer
+  summary: 顧客の登録
+  description: 顧客を新規登録する
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: resource.yaml
+          required:
+            - customerId
+            - name
+            - address
+  responses:
+    "200":
+      description: OK
+      content:
+        application/json:
+          schema:
+            $ref: resource.yaml
+    "400":
+      description: Bad Request
+    "404":
+      description: Not Found
+    "409":
+      description: Conflict
+    "500":
+      description: Internal Server Error
+
+get:
+  operationId: queryCustomers
+  summary: 顧客の抽出
+  description: 顧客を検索する
+  parameters:
+    $ref: "./query.yaml"
+  responses:
+    "200":
+      description: OK
+      content:
+        application/json:
+          schema:
+            type: array
+            items:
+              $ref: resource.yaml
+    "400":
+      description: Bad Request
+    "404":
+      description: Not Found
+    "500":
+      description: Internal Server Error

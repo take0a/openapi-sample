@@ -1,0 +1,61 @@
+get:
+  operationId: getProduct
+  summary: 製品の取得
+  description: 識別子で指定した製品を取得する
+  parameters:
+    $ref: key.yaml
+  responses:
+    "200":
+      description: OK
+      content:
+        application/json:
+          schema:
+            $ref: resource.yaml
+    "400":
+      description: Bad Request
+    "404":
+      description: Not Found
+    "500":
+      description: Internal Server Error
+        
+put:
+  operationId: putProduct
+  summary: 製品の更新
+  description: 識別子で指定した製品を更新する
+  parameters:
+    $ref: key.yaml
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: resource.yaml       
+  responses:
+    "200":
+      description: OK
+      content:
+        application/json:
+          schema:
+            $ref: resource.yaml
+    "400":
+      description: Bad Request
+    "404":
+      description: Not Found
+    "500":
+      description: Internal Server Error
+        
+delete:
+  operationId: deleteProduct
+  summary: 製品の削除
+  description: 識別子で指定した製品を削除する
+  parameters:
+    $ref: key.yaml
+  responses:
+    "200":
+      description: OK
+    "400":
+      description: Bad Request
+    "404":
+      description: Not Found
+    "500":
+      description: Internal Server Error
+  

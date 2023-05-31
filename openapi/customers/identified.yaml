@@ -1,0 +1,61 @@
+get:
+  operationId: getCustomer
+  summary: 顧客の取得
+  description: 識別子で指定した顧客を取得する
+  parameters:
+    $ref: key.yaml
+  responses:
+    "200":
+      description: OK
+      content:
+        application/json:
+          schema:
+            $ref: resource.yaml
+    "400":
+      description: Bad Request
+    "404":
+      description: Not Found
+    "500":
+      description: Internal Server Error
+        
+put:
+  operationId: putCustomer
+  summary: 顧客の更新
+  description: 識別子で指定した顧客を更新する
+  parameters:
+    $ref: key.yaml
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: resource.yaml       
+  responses:
+    "200":
+      description: OK
+      content:
+        application/json:
+          schema:
+            $ref: resource.yaml
+    "400":
+      description: Bad Request
+    "404":
+      description: Not Found
+    "500":
+      description: Internal Server Error
+        
+delete:
+  operationId: deleteCustomer
+  summary: 顧客の削除
+  description: 識別子で指定した顧客を削除する
+  parameters:
+    $ref: key.yaml
+  responses:
+    "200":
+      description: OK
+    "400":
+      description: Bad Request
+    "404":
+      description: Not Found
+    "500":
+      description: Internal Server Error
+  

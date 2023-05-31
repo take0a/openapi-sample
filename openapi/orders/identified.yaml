@@ -1,0 +1,71 @@
+get:
+  operationId: getOrder
+  summary: 注文の取得
+  description: 識別子で指定した注文を取得する
+  parameters:
+    $ref: key.yaml
+  responses:
+    "200":
+      description: OK
+      content:
+        application/json:
+          schema:
+            $ref: resource.yaml
+    "400":
+      description: Bad Request
+    "404":
+      description: Not Found
+    "500":
+      description: Internal Server Error
+        
+put:
+  operationId: putOrder
+  summary: 注文の更新
+  description: 識別子で指定した注文を更新する
+  parameters:
+    $ref: key.yaml
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: resource.yaml       
+          properties:
+            details:
+              type: array
+              items:
+                type: object
+                required:
+                  - rowNumber
+                  - productId
+                  - quantity
+                  - pricePerUnit
+  responses:
+    "200":
+      description: OK
+      content:
+        application/json:
+          schema:
+            $ref: resource.yaml
+    "400":
+      description: Bad Request
+    "404":
+      description: Not Found
+    "500":
+      description: Internal Server Error
+        
+delete:
+  operationId: deleteOrder
+  summary: 注文の削除
+  description: 識別子で指定した注文を削除する
+  parameters:
+    $ref: key.yaml
+  responses:
+    "200":
+      description: OK
+    "400":
+      description: Bad Request
+    "404":
+      description: Not Found
+    "500":
+      description: Internal Server Error
+  

@@ -1,0 +1,6 @@
+- name: productId
+  in: path
+  description: 製品の識別子
+  schema:
+    type: integer
+    format: int64

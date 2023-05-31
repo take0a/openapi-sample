@@ -1,0 +1,19 @@
+type: object
+properties: 
+  productId:
+    title: 製品ID
+    description: 製品の識別子
+    type: integer
+    format: int64
+  name:
+    title: 製品名
+    description: 製品の名称
+    type: string
+    minLength: 1
+    maxLength: 64
+  pricePerUnit:
+    title: 標準単価
+    description: 製品の標準単価
+    type: integer
+    format: int64
+    minimum: 0

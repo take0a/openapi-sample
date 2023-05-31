@@ -1,0 +1,19 @@
+type: object
+properties: 
+  customerId:
+    title: 顧客ID
+    description: 顧客の識別子
+    type: integer
+    format: int64
+  name:
+    title: 氏名
+    description: 顧客の氏名
+    type: string
+    minLength: 1
+    maxLength: 16
+  address:
+    title: 住所
+    description: 顧客の住所
+    type: string
+    minLength: 1
+    maxLength: 128

@@ -1,0 +1,29 @@
+- name: name
+  in: query
+  description: 製品の名称
+  schema:
+    type: array
+    items: 
+      type: string
+- name: pricePerUnit
+  in: query
+  description: 製品の標準単価
+  schema:
+    type: array
+    items: 
+      type: integer
+      format: int64
+- name: limit
+  in: query
+  description: 最大件数
+  schema:
+    type: integer
+    minimum: 1
+    maximum: 100
+    default: 100
+- name: productId
+  in: query
+  description: 検索済みの製品の識別子
+  schema:
+    type: integer
+    format: int64

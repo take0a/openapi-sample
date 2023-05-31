@@ -1,0 +1,47 @@
+type: object
+properties:
+  orderId:
+    title: 受注ID
+    description: 注文の識別子
+    type: integer
+    format: int64
+  customerId:
+    title: 顧客ID
+    description: 注文した顧客の識別子
+    type: integer
+    format: int64
+  orderDate:
+    title: 受注日
+    description: 注文を受注した日
+    type: string
+    format: date
+  details:
+    title: 注文明細
+    description: 注文の明細
+    type: array
+    items:
+      type: object
+      properties:
+        rowNumber:
+          title: 行番号
+          description: 注文の何行目の明細か
+          type: integer
+          format: int32
+          minimum: 1
+        productId:
+          title: 製品ID
+          description: 注文した製品の識別子
+          type: integer
+          format: int64
+        quantity:
+          title: 数量
+          description: 注文した製品の数量
+          type: integer
+          format: int64
+          exclusiveMinimum: 0
+        pricePerUnit:
+          title: 販売単価
+          description: 注文時の製品の単価
+          type: integer
+          format: int64
+          minimum: 0
